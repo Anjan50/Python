@@ -1,0 +1,12 @@
+#USING COUNT METHOD
+
+
+def countX(lst, x):
+    return lst.count(x)
+
+# initializing
+listlst = [8, 6, 8, 10, 8, 20, 10, 8, 8]
+x = 8
+print("The original list is : " + str(listlst))
+count=countX(listlst, x)
+print('{} has occurred {} times'.format(x,count ))
