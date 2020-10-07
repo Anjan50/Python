@@ -1,6 +1,6 @@
 #!/bin/env python3
 """
-Fearghal's Mood Recorder (FMR) Version 0.0.1
+Fearghal's Mood Recorder (FMR) Version 1.0.0
 
 
 This programs function is to record and log the mood of a person, and tell them a nice message is they are feeling bad or sad.
