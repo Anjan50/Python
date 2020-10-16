@@ -15,14 +15,15 @@ def reverse(x):
         c = c*10 + r
         n = n // 10
 
-    # reset value to 0 if answer exceeds the constraint
+    # reset value to 0 if answer exceeds the constraints
     if c > ((2**31)-1):
         c = 0
 
-    # return the answer with the original sign
+    # return the answer with the original signs
     if x > 0:
         print(c)
     else:
         print(- c)
 
 reverse(1234)#Example
+#This program will help many of you, Hope you like it
