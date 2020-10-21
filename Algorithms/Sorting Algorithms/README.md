@@ -7,7 +7,9 @@ All these sorting algorithm are written in such a way that they are east to
 grasp and understand for a beginner level programmer
 
 ## Files
-
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Insertion Sorting -->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
 <details>
 <summary>1.<a href="https://github.com/Anjan50/Python/blob/main/Algorithms/Sorting%20Algorithms/InsertionSort.py">Insertion Sorting</a>
 <br>
@@ -25,7 +27,9 @@ To sort an array of size n in ascending order:
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif">
 
 </details>
-
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Selection Sort -->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
 <details>
 <summary>2.<a href="https://github.com/Anjan50/Python/blob/main/Algorithms/Sorting%20Algorithms/SelectionSort.py">Selection Sorting</a>
 <br>
@@ -91,6 +95,10 @@ Third Pass<br>
 	<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif">
 </details>
 
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Quick Sort -->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 <details>
   <summary>4.<a href="https://github.com/Anjan50/Python/blob/main/Algorithms/Sorting%20Algorithms/quicksort.py">Quick Sort</a> <br>
   <b>Quick Sort</b> is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
@@ -103,15 +111,18 @@ Third Pass<br>
   
   <blockquote>
   <ol>
-  <li>Always pick first element as pivot.</li>
-  <li>Always pick last element as pivot (implemented below)</li>
-  <li>Pick a random element as pivot.</li>
-  <li>Pick median as pivot.</li>
+	<li>Pick an element as a pivot</li>
+  	<li>Compare the other element with the pivot and partition the list</li>
+  	<li>Apply quick sort on the partiotioned lists</li>
+  	<li>Join all the partitions together</li>
   </ol>
   </blockquote>
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif">
 
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Heap Sort -->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <details>
 <summary>
@@ -155,6 +166,9 @@ If r > l <br>
 </blockquote>
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif">
 </details>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Radix Sort -->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <details>
 <summary>
@@ -179,8 +193,8 @@ Sort the elements based on the unit place digits (X=0).</li>
 <li>Now, sort the elements based on digits at tens place.</li>
 <li>Finally, sort the elements based on the digits at hundreds place.</li>
 </blockquote>
-#### No Gif found 
-<a href="http://www.algostructure.com/sorting/radixsort.php">Radix Sort Visual</a>
+#### No Gif found , Here is a website with visualises the sorting
+<a href="http://www.algostructure.com/sorting/radixsort.php">Radix Sort Visual -- click here</a>
 </details>
 
 
