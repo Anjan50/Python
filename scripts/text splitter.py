@@ -1,6 +1,5 @@
 def SplitText(parts, text):
-    partl = len(text)//parts
-    rem = len(text)%parts
+    part1, rem = divmod(len(text), parts)
     l = []
     cnt = 0;
     for i in range(parts):
