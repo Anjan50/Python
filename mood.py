@@ -79,11 +79,11 @@ if __name__ == "__main__":
             print_args_to_file()
             log.close()
         if args.mood == 4:
-            print("Looking good!")
+            print("you are Looking good!")
             print_args_to_file()
             log.close()
         if args.mood == 3:
-            print("Exellent!")
+            print("you are Exellent!")
             print_args_to_file()
             log.close()
         if args.mood == 2:
