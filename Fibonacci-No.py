@@ -1,3 +1,5 @@
+# This code is to find Fibonacci series
+
 def Fibonacci(n):
     if n<=0:
         print("Incorrect input")
@@ -13,3 +15,5 @@ def Fibonacci(n):
 x = int(input("Enter a number : "))
 result = Fibonacci(x) 
 print("Result is ",result)
+
+# End of the program
