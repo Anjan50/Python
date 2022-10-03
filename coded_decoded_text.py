@@ -1,5 +1,8 @@
 import string
+
 abc = string.ascii_uppercase
+
+
 def caesar(txt, n, coded=False):
     """ returns the coded or decoded text """
     result = ""
@@ -11,6 +14,7 @@ def caesar(txt, n, coded=False):
         else:
             result += abc[(abc.find(char) - n) % len(abc)]
     return result
+
 
 n = 3
 x = caesar("Hello, here I am!", n)

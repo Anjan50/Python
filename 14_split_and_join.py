@@ -1,29 +1,31 @@
-# Python program to split a string and join it using different delimiter 
+# Python program to split a string and join it using different delimiter
 
-def split_string(string): 
 
-	# Split the string based on space delimiter 
-	list_string = string.split(' ') 
-	
-	return list_string 
+def split_string(string):
 
-def join_string(list_string): 
+    # Split the string based on space delimiter
+    list_string = string.split(' ')
 
-	# Join the string based on '-' delimiter 
-	string = '-'.join(list_string) 
-	
-	return string 
+    return list_string
 
-# Driver Function 
+
+def join_string(list_string):
+
+    # Join the string based on '-' delimiter
+    string = '-'.join(list_string)
+
+    return string
+
+
+# Driver Function
 if __name__ == '__main__':
-	# Enter the string .You can edit the string of your choice 
-	string = 'Hack October Fest'
-	
-	# Splitting a string. 
-	list_string = split_string(string) 
-	print list_string 
+    # Enter the string .You can edit the string of your choice
+    string = 'Hack October Fest'
 
-	# Join list of strings into one 
-	new_string = join_string(list_string) 
-	print new_string 
+    # Splitting a string.
+    list_string = split_string(string)
+    print list_string
 
+    # Join list of strings into one
+    new_string = join_string(list_string)
+    print new_string

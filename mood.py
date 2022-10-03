@@ -21,14 +21,22 @@ import argparse
 from time import sleep
 
 
-def parse_command_line_args():  # This is the function that is required for the command line arguments to work.
+def parse_command_line_args(
+):  # This is the function that is required for the command line arguments to work.
     arg_description = "This is Fearghal's Mood Recorder"
-    arg_parser = argparse.ArgumentParser(prog="FMR", description=arg_description)
-    arg_parser.add_argument("--mood", "-m", action="store", dest="mood", type=int, required=False,
-                            # This line adds the command line arguments to the function.
-                            help="This the main argument to use with this program, "
-                                 "after this argument input how you are feeling today "
-                                 "on a scale from -5 to 5.")
+    arg_parser = argparse.ArgumentParser(prog="FMR",
+                                         description=arg_description)
+    arg_parser.add_argument(
+        "--mood",
+        "-m",
+        action="store",
+        dest="mood",
+        type=int,
+        required=False,
+        # This line adds the command line arguments to the function.
+        help="This the main argument to use with this program, "
+        "after this argument input how you are feeling today "
+        "on a scale from -5 to 5.")
     arguments = arg_parser.parse_args()
     return arguments  # Returns the value of the
 
@@ -49,17 +57,25 @@ def show_loading():
 
 
 def print_args_to_file():
-    print("Date Recorded: ", date, "\n"
-                                   "Time Recorded: ", time, "\n"
-                                                            "Mood Recorded: ", args.mood, "\n", file=log
-          )
+    print("Date Recorded: ",
+          date, "\n"
+          "Time Recorded: ",
+          time, "\n"
+          "Mood Recorded: ",
+          args.mood,
+          "\n",
+          file=log)
 
 
 def print_user_input():
-    print("Date Recorded: ", date, "\n"
-                                   "Time Recorded: ", time, "\n"
-                                                            "Mood Recorded: ", user_input, "\n", file=log
-          )
+    print("Date Recorded: ",
+          date, "\n"
+          "Time Recorded: ",
+          time, "\n"
+          "Mood Recorded: ",
+          user_input,
+          "\n",
+          file=log)
 
 
 right_now = datetime.datetime.now()
@@ -124,14 +140,19 @@ if __name__ == "__main__":
         print("Sorry, Please use the range '-5 to 5'")
 
     elif args.mood is None:
-        print("It seems you have given no command line arguments, "
-              "would you like to exit the program and type an argument "
-              "(A list of the arguments can be seen by typing '<NameOfPythonFile> -h'")
+        print(
+            "It seems you have given no command line arguments, "
+            "would you like to exit the program and type an argument "
+            "(A list of the arguments can be seen by typing '<NameOfPythonFile> -h'"
+        )
 
         ans = None
         while ans is None:
             ans = input("Yes [y], or No [N]\n").lower()
-            if ans not in ['yes', 'y', 'Y', 'Yes', 'YES', 'yES', 'yeS', 'yEs', '', 'n', 'no', 'NO', 'nO', 'No']:
+            if ans not in [
+                    'yes', 'y', 'Y', 'Yes', 'YES', 'yES', 'yeS', 'yEs', '',
+                    'n', 'no', 'NO', 'nO', 'No'
+            ]:
                 print("Please enter Yes or No, nothing else")
                 ans = None
             if ans in ['yes', 'y', 'Y', 'Yes', 'YES', 'yES', 'yeS', 'yEs']:

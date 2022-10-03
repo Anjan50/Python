@@ -3,10 +3,11 @@ def isPalindrome(s):
     if (s == rev):
         return True
     return False
- 
+
+
 s = input("Enter a string :")
 ans = isPalindrome(s)
- 
+
 if (ans):
     print("Yes")
 else:

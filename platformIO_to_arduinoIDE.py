@@ -27,6 +27,5 @@ for i in include_e:
     str = src + "\include" + "\\" + i
     path_list.append(str)
 
-
 for i in range(len(path_list)):
     sh.copy(path_list[i], dest)

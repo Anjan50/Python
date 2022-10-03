@@ -3,6 +3,7 @@
 from math import floor
 from sys import argv
 
+
 def is_palindrome(word):
     length = len(word)
     if length < 2:
@@ -16,6 +17,7 @@ def is_palindrome(word):
         if word[i] != backwards and max_check_position >= 0:
             return False
     return True
+
 
 if __name__ == "__main__":
     word = argv[1]

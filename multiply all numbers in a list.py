@@ -1,14 +1,13 @@
-
-def mul(myList) : 
+def mul(myList):
     result = 1
-    for x in myList: 
-         result = result * x  
-    return result  
+    for x in myList:
+        result = result * x
+    return result
 
-arr=[]
-n=int(input())
+
+arr = []
+n = int(input())
 for i in range(n):
-    tmp=int(input())
+    tmp = int(input())
     arr.append(tmp)
-print(mul(arr)) 
-
+print(mul(arr))

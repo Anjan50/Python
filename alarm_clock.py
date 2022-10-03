@@ -1,5 +1,6 @@
-from datetime import datetime 
+from datetime import datetime
 from playsound import playsound
+
 
 def validate_time(alarm_time):
     if len(alarm_time) != 11:
@@ -14,9 +15,10 @@ def validate_time(alarm_time):
         else:
             return "ok"
 
+
 while True:
     alarm_time = input("Enter time in 'HH:MM:SS AM/PM' format: ")
-    
+
     validate = validate_time(alarm_time.lower())
     if validate != "ok":
         print(validate)
