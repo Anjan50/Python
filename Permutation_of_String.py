@@ -2,7 +2,7 @@
 import itertools
 
 ## initializing a string
-string=input()
+string = input()
 
 ## itertools.permutations method
 permutation_list = list(itertools.permutations(string))
