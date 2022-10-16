@@ -1,6 +1,6 @@
-string=input()
-substr=input()
+string = input()
+substr = input()
 if substr in string:
-	print("String contains substring at index",string.find(substr))
+    print("String contains substring at index", string.find(substr))
 else:
-	print("not found")	
+    print("not found")

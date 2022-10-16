@@ -1,5 +1,4 @@
-i=int(input())
-string=input()
+i = int(input())
+string = input()
 
-print(string.replace(string[i],''))
-
+print(string.replace(string[i], ''))

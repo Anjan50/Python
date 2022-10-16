@@ -10,25 +10,27 @@ A number below 100 can never be a Bouncy number.
 Write a program in Python to accept a number. Check and display whether it is a Bouncy number or not.
 '''
 
+
 #Function Starts-----------------------------
-def isBouncy(num : int)-> bool:
-	
-	if num < 100:
-		return False
-	
-	h = 0
-	for i in str(num):
-		i = int(i)
-		if h > i:
-			return False
-		h = i
-		#h Becomes Storage For Prev Digit
-	return True
+def isBouncy(num: int) -> bool:
+
+    if num < 100:
+        return False
+
+    h = 0
+    for i in str(num):
+        i = int(i)
+        if h > i:
+            return False
+        h = i
+        #h Becomes Storage For Prev Digit
+    return True
+
+
 #Function Ends-------------------------------
 
 num = int(input("Enter Number To Check:"))
 if isBouncy(num):
-	print(f"Given Number {num} Is A Bouncy Number.")
+    print(f"Given Number {num} Is A Bouncy Number.")
 else:
-	print(f"Given Number {num} Is Not A Bouncy Number.")
-
+    print(f"Given Number {num} Is Not A Bouncy Number.")

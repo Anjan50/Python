@@ -15,16 +15,21 @@ driver.get('https://web.whatsapp.com')
 input("Press ENTER after login into Whatsapp Web and your chats are visiable.")
 for column in excel_data['Contact'].tolist():
     try:
-        url = 'https://web.whatsapp.com/send?phone=+' + str(excel_data['Contact'][count]) + '&text=' #+ excel_data['Message'][0]
+        url = 'https://web.whatsapp.com/send?phone=+' + str(
+            excel_data['Contact']
+            [count]) + '&text='  #+ excel_data['Message'][0]
         sent = False
         driver.get(url)
         try:
-            msg=excel_data['Message'][0]
+            msg = excel_data['Message'][0]
             msg_box = driver.find_element_by_class_name('g0rxnol2')
             msg_box.send_keys(msg)
-            click_btn = WebDriverWait(driver, 35).until(EC.element_to_be_clickable((By.CLASS_NAME, '_1Ae7k'))) #message box //g0rxnol2
+            click_btn = WebDriverWait(driver, 35).until(
+                EC.element_to_be_clickable(
+                    (By.CLASS_NAME, '_1Ae7k')))  #message box //g0rxnol2
         except Exception as e:
-            print("Sorry message could not sent to " + str(excel_data['Contact'][count]))
+            print("Sorry message could not sent to " +
+                  str(excel_data['Contact'][count]))
         else:
             sleep(2)
             click_btn.click()
@@ -33,7 +38,8 @@ for column in excel_data['Contact'].tolist():
             print('Message sent to: ' + str(excel_data['Contact'][count]))
         count = count + 1
     except Exception as e:
-        print('Failed to send message to ' + str(excel_data['Contact'][count]) + str(e))
+        print('Failed to send message to ' +
+              str(excel_data['Contact'][count]) + str(e))
 
 driver.quit()
 print("The script executed successfully.")
