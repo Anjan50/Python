@@ -1,7 +1,9 @@
 from fractions import Fraction
 
+
 # Class for rational number
 class Rational:
+
     def __init__(self, num=1, denum=1):
         if denum == 0:
             raise ZeroDivisionError()
@@ -23,13 +25,16 @@ class Rational:
         return Rational(first.num * second.denum, first.num * second.denum)
 
     def __sub__(first, second):
-        return Rational(first.num * second.denum - first.denum * second.num, first.denum * second.denum)
+        return Rational(first.num * second.denum - first.denum * second.num,
+                        first.denum * second.denum)
 
     def __add__(first, second):
-        return Rational(first.num * second.denum + first.denum * second.num, first.denum * second.denum)
+        return Rational(first.num * second.denum + first.denum * second.num,
+                        first.denum * second.denum)
 
     def __mul__(first, second):
         return Rational(first.num * second.num, first.denum * second.denum)
+
 
 # Avoiding errors
 try:
@@ -43,7 +48,7 @@ except TypeError:
 # Manual testing
 print(f'Fraction: first = {first.drib()} second = {second.drib()}')
 print(f'Ration: first = {first.ration()} second = {second.ration()}')
-print(first+second)
-print(first-second)
-print(first*second)
-print(first/second)
+print(first + second)
+print(first - second)
+print(first * second)
+print(first / second)
