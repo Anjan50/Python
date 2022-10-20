@@ -15,11 +15,11 @@ def length2(list):
         return 1 + length2(list[1:]) # using recusion
 
 # using len function to find length
-print("Lenght of list using len function: ", len(l))
+print("Length of list using len function: ", len(l))
 
 # using for loop to find length
-print("Lenght of list using while loop: ", length1(l.copy())) # using copy to avoid changing original list
+print("Length of list using while loop: ", length1(l.copy())) # using copy to avoid changing original list
 
 # using recusion to find length
-print("Lenght of list using recusion: ", length2(l.copy())) # using copy to avoid changing original list
+print("Length of list using recusion: ", length2(l.copy())) # using copy to avoid changing original list
 
