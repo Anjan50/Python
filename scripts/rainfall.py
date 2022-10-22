@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 # inspired from matrix program in Linux
 
-
 import time
 import random
 import os
 import sys
-
 
 colors = {
     "black": "\u001b[30m",
@@ -19,7 +17,6 @@ colors = {
     "cyan": "\u001b[36m",
     "white": "\u001b[37m",
     "reset": "\u001b[0m",
-
     "b_black": "\u001b[30;1m",
     "b_red": "\u001b[31;1m",
     "b_green": "\u001b[32;1m",
@@ -28,18 +25,19 @@ colors = {
     "b_magenta": "\u001b[35;1m",
     "b_cyan": "\u001b[36;1m",
     "b_white": "\u001b[37;1m",
-
     "Reset": "\u001b[0m",
 }
 
+
 def Colored(string, color):
-    return string if "-m" in sys.argv else ( colors[color] + string + colors["Reset"])
+    return string if "-m" in sys.argv else (colors[color] + string +
+                                            colors["Reset"])
 
 
 def Clear_Screen():
-    print("\033[2J") # erase saved lines
-    print("\033[3J") # erase entire screen
-    print("\033[H") # moves cursor to home position
+    print("\033[2J")  # erase saved lines
+    print("\033[3J")  # erase entire screen
+    print("\033[H")  # moves cursor to home position
 
 
 def Get_Arguments():
@@ -67,29 +65,32 @@ def New_Drop():
         }
         rainfall.append(raindrop)
 
+
 def Rain():
     ## iterate over every line
     for i in range(ymax):
-        line = " "*xmax
+        line = " " * xmax
 
         ### to avoid splicing of ansi codes, splice in the drops from the end of the line
-        this_line_raindrops = [raindrop for raindrop in rainfall if raindrop["y"] == i]
+        this_line_raindrops = [
+            raindrop for raindrop in rainfall if raindrop["y"] == i
+        ]
         this_line_raindrops.sort(key=lambda y: y["x"])
         this_line_raindrops.reverse()
 
-        ## insert new drops and shift existing drops 
+        ## insert new drops and shift existing drops
         for raindrop in this_line_raindrops:
             x = raindrop["x"]
-            line = line[:x] + raindrop["shape"] +line[x:]
-                
+            line = line[:x] + raindrop["shape"] + line[x:]
+
         print(line)
 
     ### update raindrop positions
     for raindrop in rainfall:
-        raindrop["y"] += 1 
+        raindrop["y"] += 1
 
         ## once a raindrop reaches the ground, they splash
-        if raindrop["y"] > ymax-2:
+        if raindrop["y"] > ymax - 2:
             raindrop["shape"] = Colored("o", random.choice(drop_colors))
 
         # raindrops outside the window evaporate
@@ -99,15 +100,14 @@ def Rain():
     New_Drop()
 
 
-
 def Weather_Forecast():
     global weather
     global intensity
 
-    weather += 1 
+    weather += 1
     if weather == 100:
         weather = 0
-        intensity += random.choice([-1,1])
+        intensity += random.choice([-1, 1])
         if intensity < 1:
             intensity = 1
         if intensity > 10:
@@ -115,24 +115,22 @@ def Weather_Forecast():
 
 
 size = os.get_terminal_size()
-xmax = size.columns 
+xmax = size.columns
 ymax = int(size.lines)
 
 weather = 0
 rainfall = []
-DROPSHAPES =["|", "│", "┃", "╽", "╿", "║", "┆", "┇", "┊", "┋", "╵", "╹", "╻"]
+DROPSHAPES = ["|", "│", "┃", "╽", "╿", "║", "┆", "┇", "┊", "┋", "╵", "╹", "╻"]
 
 args = Get_Arguments()
 intensity = args.get("intensity", 1)
 drop_colors = args.get("colors", ["blue", "b_blue"])
 
-
-
-print('\033[?25l', end="") ## hides the cursor
+print('\033[?25l', end="")  ## hides the cursor
 New_Drop()
 
 try:
-    while True: 
+    while True:
         Rain()
         time.sleep(0.08)
         Clear_Screen()
@@ -140,6 +138,4 @@ try:
 
 except KeyboardInterrupt:
     Clear_Screen()
-    print('\033[?25h', end="") # makes cursor visible again
-
-
+    print('\033[?25h', end="")  # makes cursor visible again

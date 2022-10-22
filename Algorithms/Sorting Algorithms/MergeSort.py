@@ -43,4 +43,5 @@ def mergeSort(self, arr):
 
     midpoint = len(arr) // 2
 
-    return merge(left=mergeSort(arr[:midpoint]), right=mergeSort(arr[midpoint:]))
+    return merge(left=mergeSort(arr[:midpoint]),
+                 right=mergeSort(arr[midpoint:]))

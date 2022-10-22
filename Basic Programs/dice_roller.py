@@ -12,7 +12,7 @@ def roll(n: int = 2) -> Tuple[str, int]:
     """
     faces = ['\u2680', '\u2681', '\u2682', '\u2683', '\u2684', '\u2685']
     dice = [randint(1, 6) for _ in range(n)]
-    return " ".join(faces[die-1] for die in dice), sum(dice)
+    return " ".join(faces[die - 1] for die in dice), sum(dice)
 
 
 if __name__ == "__main__":

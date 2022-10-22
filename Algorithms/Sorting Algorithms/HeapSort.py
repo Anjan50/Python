@@ -26,7 +26,7 @@ def heap_sort(nums):
     random_list_of_nums = [33, 13, 42, 8, 51]
     heap_sort(random_list_of_nums)
     """
-    
+
     n = len(nums)
 
     for i in range(n, -1, -1):
