@@ -1,10 +1,11 @@
 class Rectangle:
+
     def __init__(self, length=1, width=1):
         self.length = length
         self.width = width
 
     def per(self):
-        return 2*(self.__width + self.__length)
+        return 2 * (self.__width + self.__length)
 
     def area(self):
         return self.__width * self.__length
@@ -18,7 +19,7 @@ class Rectangle:
         return self.__width
 
     def __str__(self):
-         return f'Lendth = {self.length} Width = {self.width}'
+        return f'Lendth = {self.length} Width = {self.width}'
 
     @length.setter
     def length(self, val):
