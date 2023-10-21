@@ -1,0 +1,20 @@
+from collections import Counter
+
+def find_duplicate_characters(input_string):
+    # Use Counter to count the occurrences of each character in the string
+    char_count = Counter(input_string)
+    
+    # Find characters with a count greater than 1 (duplicates)
+    duplicates = [char for char, count in char_count.items() if count > 1]
+    
+    return duplicates
+
+# Example usage:
+input_string = "hello world"
+
+duplicates = find_duplicate_characters(input_string)
+
+if duplicates:
+    print("Duplicate characters in the string:", duplicates)
+else:
+    print("No duplicate characters found in the string.")
