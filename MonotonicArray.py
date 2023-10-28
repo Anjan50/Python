@@ -9,11 +9,12 @@ def is_monotonic(array):
 
     return increasing or decreasing
 
+
 # Example usage:
 arr1 = [1, 2, 2, 3]
 arr2 = [3, 2, 1]
 arr3 = [1, 1, 1, 2, 3]
-arr4 = [2,1,2,1,2]
+arr4 = [2, 1, 2, 1, 2]
 
 if is_monotonic(arr1):
     print("arr1 is monotonic.")
